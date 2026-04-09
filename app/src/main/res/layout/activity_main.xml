@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Titre de l'application -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧵 Threads et AsyncTask"
+        android:textSize="22sp"
+        android:textColor="#1976D2"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp" />
+
+    <!-- Zone de statut -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📌 Statut : Prêt"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="#E3F2FD"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Barre de progression -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progression :"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0"
+        android:visibility="invisible" />
+
+    <!-- Zone d'affichage de l'image -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image chargée :"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="230dp"
+        android:layout_height="120dp"
+        android:background="#E0E0E0"
+        android:contentDescription="Image chargée"
+        android:padding="8dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <!-- Zone de saisie pour le calcul dynamique -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📐 Calcul dynamique"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/edtNombre1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Grand nombre 1"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="#F5F5F5"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textColorHint="#9E9E9E" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  " />
+
+        <EditText
+            android:id="@+id/edtNombre2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Grand nombre 2"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="#F5F5F5"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textColorHint="#9E9E9E" />
+
+    </LinearLayout>
+
+    <!-- Choix de l'opération -->
+    <RadioGroup
+        android:id="@+id/radioGroupOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/radioAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="➕     "
+            android:checked="true"
+            android:layout_marginEnd="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioSoustraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ➖     "
+            android:layout_marginEnd="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioMultiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ✖️    "
+            android:layout_marginEnd="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioDivision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ➗     " />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCalculDynamique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  Lancer le calcul dynamique"
+        android:backgroundTint="#9C27B0"
+        android:layout_marginTop="8dp" />
+
+    <!-- Boutons existants -->
+    <Button
+        android:id="@+id/btnLoadThread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  Charger image (Thread)"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  Afficher Toast"
+        android:backgroundTint="#2196F3"
+        android:layout_marginTop="8dp" />
+
+    <!-- Pied de page (signature) -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        android:textSize="12sp"
+        android:textColor="#CCCCCC"
+        android:gravity="center"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Créé par El Hachimi Abdelhamid - Lab 8 Threads et AsyncTask"
+        android:textSize="12sp"
+        android:textColor="#9E9E9E"
+        android:gravity="center"
+        android:padding="4dp" />
+
+</LinearLayout>
